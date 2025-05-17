@@ -404,8 +404,3 @@ CREATE TABLE IF NOT EXISTS "Clientes" (
 	"id_cliente" INTEGER NOT NULL UNIQUE,
 	PRIMARY KEY("id_cliente")
 );
-
-CREATE TABLE IF NOT EXISTS "table_38" (
-	"id" INTEGER NOT NULL UNIQUE,
-	PRIMARY KEY("id")
-);

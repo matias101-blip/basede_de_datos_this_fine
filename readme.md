@@ -2,7 +2,7 @@
 repositorio con sqls script de modelos de la materia Base de Datos, estos modelos se relizaron en drawdb, cuentan con ER.
 
 ## Trabajo practico Fabriaca de productos electronicos
-[Archivo sql de la base de datos Fabrica](./base_de_datos_fabrica.sql)
+[Archivo sql de la base de datos Fabrica](./src/fabrica/base_de_datos_fabrica.sql)
 ### Realizado
 - Entidades abstraidas del documento
 - Tablas listas
