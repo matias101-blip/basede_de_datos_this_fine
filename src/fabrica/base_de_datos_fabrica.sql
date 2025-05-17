@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS "PRODUCTO_TERMINADO" (
 	"id_inv_terminado" INTEGER,
 	"Name_producto" TEXT,
 	"Description" TEXT,
-	"C_terminada" BLOB,
+	"C_terminada" INTEGER,
 	"Fecha_elaboracion" TEXT,
 	"id_inspeccion" INTEGER,
 	PRIMARY KEY("Id_producto"),
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS "INVP_TERMINADO" (
 CREATE TABLE IF NOT EXISTS "MV_INVENTARIO" (
 	"Id_inventario" INTEGER NOT NULL UNIQUE,
 	"Fecha" TEXT,
-	"Cantidad" BLOB,
+	"Cantidad" INTEGER,
 	PRIMARY KEY("Id_inventario")
 );
 

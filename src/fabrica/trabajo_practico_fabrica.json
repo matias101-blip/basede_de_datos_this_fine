@@ -696,7 +696,7 @@
         },
         {
           "name": "C_terminada",
-          "type": "BLOB",
+          "type": "INT",
           "comment": "",
           "unique": false,
           "increment": false,
@@ -842,7 +842,7 @@
         },
         {
           "name": "Cantidad",
-          "type": "BLOB",
+          "type": "INT",
           "comment": "",
           "unique": false,
           "increment": false,
@@ -850,7 +850,9 @@
           "primary": false,
           "default": "",
           "check": "",
-          "id": 2
+          "id": 2,
+          "size": "",
+          "values": []
         }
       ],
       "indices": [],
@@ -2526,8 +2528,8 @@
     {
       "id": 36,
       "name": "Pedidos_Clientes",
-      "x": 3997.4034680737695,
-      "y": -580.1593912369299,
+      "x": 4000.806608270451,
+      "y": -576.756251040249,
       "fields": [
         {
           "name": "id_pedido",
