@@ -1,4 +1,3 @@
-/* Pasar a primera forma normal */
 CREATE TABLE IF NOT EXISTS "Registro_provedor" (
 	"id_registro" INTEGER,
 	"codigo_Provedor" TEXT UNIQUE,
