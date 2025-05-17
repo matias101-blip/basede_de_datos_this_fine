@@ -1,3 +1,4 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/matias101-blip/base-de-datos-tareas)
 # Slq script de modelos para sqlite
 repositorio con sqls script de modelos de la materia Base de Datos, estos modelos se relizaron en drawdb, cuentan con ER.
 
