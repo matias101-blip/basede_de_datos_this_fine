@@ -18,7 +18,6 @@ CREATE TABLE IF NOT EXISTS "Provedor" (
 );
 
 CREATE TABLE IF NOT EXISTS "Catalogo_de_materiale" (
-	"id_orden_compra" INTEGER,
 	"id_catalogo" INTEGER NOT NULL,
 	"codigo_material" TEXT UNIQUE,
 	PRIMARY KEY("id_catalogo"),
@@ -30,18 +29,18 @@ CREATE INDEX IF NOT EXISTS "Catalogo_de_materiale_index_0"
 ON "Catalogo_de_materiale" ("id_catalogo");
 CREATE TABLE IF NOT EXISTS "Ordene_de_compra" (
 	"id_orden_compra" INTEGER NOT NULL UNIQUE,
+	"id_lista" INTEGER,
 	"id_catalogo" INTEGER NOT NULL,
-	"cantidades" INTEGER NOT NULL,
 	"precios" REAL NOT NULL,
 	"termino_entrega" TEXT NOT NULL,
 	"fecha_compra" TEXT NOT NULL,
 	"codigo_provedor" TEXT NOT NULL,
 	PRIMARY KEY("id_orden_compra"),
-	FOREIGN KEY ("cantidades") REFERENCES "Lista_materiales"("cantidades")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("id_catalogo") REFERENCES "Catalogo_de_materiale"("id_catalogo")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("codigo_provedor") REFERENCES "Provedor"("codigo_Provedor")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("id_lista") REFERENCES "Lista_materiales"("id_lista")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -211,13 +210,13 @@ ON "Plan_Maestro_Produccion" ("id_ruta");
 CREATE INDEX IF NOT EXISTS "Plan_Maestro_Producción_index_2"
 ON "Plan_Maestro_Produccion" ("Fecha_Final");
 CREATE TABLE IF NOT EXISTS "Lista_materiales" (
-	"id_bom" INTEGER NOT NULL UNIQUE,
+	"id_lista" INTEGER NOT NULL UNIQUE,
 	-- FK
 	"id_producto" INTEGER,
 	-- FK Producto
 	"id_componente" INTEGER,
 	"cantidades" INTEGER NOT NULL,
-	PRIMARY KEY("id_bom", "cantidades")
+	PRIMARY KEY("id_lista")
 );
 
 CREATE INDEX IF NOT EXISTS "Lista_materiales_index_0"
