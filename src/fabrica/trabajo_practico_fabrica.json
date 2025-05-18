@@ -1,6 +1,94 @@
 {
   "tables": [
     {
+      "id": 36,
+      "name": "Pedidos_Clientes",
+      "x": 4049.0461205584015,
+      "y": -566.0363594207043,
+      "fields": [
+        {
+          "name": "id_pedido",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "id_cliente",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "fecha_pedido",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "feche_recibo",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 3,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "estado_pedido",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 4,
+          "size": 255
+        }
+      ],
+      "comment": "Revizar si esta en 3ra forma normal",
+      "indices": [
+        {
+          "id": 0,
+          "name": "Pedidos_Clientes_index_0",
+          "unique": false,
+          "fields": []
+        }
+      ],
+      "color": "#175e7a",
+      "key": 1746842937142
+    },
+    {
       "id": 0,
       "name": "Registro_provedor",
       "x": 394.58694837396047,
@@ -438,7 +526,7 @@
       "color": "#175e7a",
       "fields": [
         {
-          "name": "id_inventario",
+          "name": "id_ubicacion",
           "type": "INT",
           "comment": "",
           "unique": false,
@@ -446,9 +534,9 @@
           "notNull": false,
           "primary": false,
           "default": "",
-          "check": "",
-          "id": 0,
           "size": "",
+          "check": "",
+          "id": 2,
           "values": []
         },
         {
@@ -466,30 +554,17 @@
           "values": []
         },
         {
-          "name": "locate",
-          "type": "VARCHAR",
+          "name": "id_inventario",
+          "type": "INT",
           "comment": "",
           "unique": false,
           "increment": false,
           "notNull": false,
           "primary": false,
           "default": "",
-          "size": 255,
           "check": "",
-          "id": 2
-        },
-        {
-          "name": "name_producto",
-          "type": "VARCHAR",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 3,
-          "size": 255,
+          "id": 0,
+          "size": "",
           "values": []
         },
         {
@@ -514,7 +589,7 @@
     },
     {
       "name": "STOCK_MATERIAL",
-      "comment": "",
+      "comment": "revisar si esta en 3ra forma normal",
       "color": "#175e7a",
       "fields": [
         {
@@ -528,20 +603,6 @@
           "default": "",
           "check": "",
           "id": 0,
-          "size": "",
-          "values": []
-        },
-        {
-          "name": "Id_almacen",
-          "type": "INT",
-          "comment": "",
-          "unique": false,
-          "increment": false,
-          "notNull": false,
-          "primary": false,
-          "default": "",
-          "check": "",
-          "id": 1,
           "size": "",
           "values": []
         },
@@ -582,6 +643,20 @@
           "increment": false,
           "comment": "",
           "id": 4,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "Id_almacen",
+          "type": "INT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1,
           "size": "",
           "values": []
         },
@@ -834,7 +909,7 @@
     },
     {
       "name": "Valoracion_inventario",
-      "comment": "",
+      "comment": "Revisar si esta en 3ra forma normal",
       "color": "#175e7a",
       "fields": [
         {
@@ -852,17 +927,18 @@
           "values": []
         },
         {
-          "name": "codigo_material",
-          "type": "VARCHAR",
-          "comment": "",
-          "unique": false,
-          "increment": false,
-          "notNull": false,
-          "primary": false,
+          "id": "7KJBPuge03Hird9csK9g5",
+          "name": "id_espesificacion",
+          "type": "INT",
           "default": "",
           "check": "",
-          "id": 1,
-          "size": 255
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
         },
         {
           "name": "Fecha_aplicada",
@@ -879,8 +955,8 @@
       ],
       "indices": [],
       "id": 11,
-      "x": 1755.8875196014028,
-      "y": 237.30177129904757
+      "x": 1788.047194460037,
+      "y": 224.7952310762453
     },
     {
       "name": "ORDEN_FARBICACION",
@@ -946,12 +1022,12 @@
     },
     {
       "name": "MATERIAL_USADO",
-      "comment": "",
+      "comment": "Revisar si esta en 3ra forma normal",
       "color": "#175e7a",
       "fields": [
         {
-          "id": "kb_dtUERrhsX78hS5R-VO",
-          "name": "id_usado",
+          "id": "Q-E4YLUKzSgPaVR_hIGV0",
+          "name": "id_orden",
           "type": "INT",
           "default": "",
           "check": "",
@@ -960,34 +1036,6 @@
           "notNull": false,
           "increment": false,
           "comment": "",
-          "size": "",
-          "values": []
-        },
-        {
-          "id": "Q-E4YLUKzSgPaVR_hIGV0",
-          "name": "id_orden",
-          "type": "INT",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "size": "",
-          "values": []
-        },
-        {
-          "name": "codigo_material",
-          "type": "INT",
-          "comment": "",
-          "unique": false,
-          "increment": false,
-          "notNull": false,
-          "primary": false,
-          "default": "",
-          "check": "",
-          "id": 0,
           "size": "",
           "values": []
         },
@@ -1002,6 +1050,20 @@
           "default": "",
           "check": "",
           "id": 1,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "codigo_material",
+          "type": "INT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 0,
           "size": "",
           "values": []
         },
@@ -1107,7 +1169,7 @@
     },
     {
       "name": "REGISTRO_TIEMPO",
-      "comment": "",
+      "comment": "revizar si esta en 3ra forma normal",
       "color": "#175e7a",
       "fields": [
         {
@@ -1125,48 +1187,24 @@
           "values": []
         },
         {
-          "name": "Tipo_Tiempo",
-          "type": "VARCHAR",
-          "comment": "",
-          "unique": true,
-          "increment": false,
-          "notNull": false,
-          "primary": false,
+          "id": "4Fc-5CQg6LE_EFFL0--NV",
+          "name": "id_R_Tiempo",
+          "type": "INT",
           "default": "",
           "check": "",
-          "id": 1,
-          "size": 255,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
           "values": []
-        },
-        {
-          "name": "Tiempo_Minutos",
-          "type": "TIME",
-          "comment": "",
-          "unique": false,
-          "increment": false,
-          "notNull": false,
-          "primary": false,
-          "default": "",
-          "check": "",
-          "id": 2
-        },
-        {
-          "name": "Tiempo_Hora",
-          "type": "TIME",
-          "comment": "",
-          "unique": false,
-          "increment": false,
-          "notNull": false,
-          "primary": false,
-          "default": "",
-          "check": "",
-          "id": 3
         }
       ],
       "indices": [],
       "id": 15,
-      "x": 2948.3697547358242,
-      "y": -1425.6466199219785
+      "x": 2987.676024007488,
+      "y": -1513.1924014815938
     },
     {
       "name": "REGISTRO_INCIDENCIA",
@@ -1188,42 +1226,18 @@
           "values": []
         },
         {
-          "name": "Tipo_incidencia",
-          "type": "VARCHAR",
+          "name": "id_tipo_incidencia",
+          "type": "INT",
           "comment": "",
           "unique": false,
           "increment": false,
           "notNull": false,
           "primary": false,
           "default": "",
-          "size": 255,
+          "size": "",
           "check": "",
-          "id": 1
-        },
-        {
-          "name": "Descripcion ",
-          "type": "VARCHAR",
-          "comment": "",
-          "unique": false,
-          "increment": false,
-          "notNull": false,
-          "primary": false,
-          "default": "",
-          "size": 255,
-          "check": "",
-          "id": 2
-        },
-        {
-          "name": "Tiempo_incidencia",
-          "type": "TIME",
-          "comment": "",
-          "unique": false,
-          "increment": false,
-          "notNull": false,
-          "primary": false,
-          "default": "",
-          "check": "",
-          "id": 3
+          "id": 1,
+          "values": []
         }
       ],
       "indices": [],
@@ -1834,20 +1848,6 @@
           "comment": "",
           "id": 2,
           "size": 255
-        },
-        {
-          "name": "id_valoracion",
-          "type": "INT",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 3,
-          "size": "",
-          "values": []
         }
       ],
       "comment": "",
@@ -1975,8 +1975,8 @@
     {
       "id": 28,
       "name": "Producto_defectuosos",
-      "x": 2326.7998586070094,
-      "y": -639.8306605240315,
+      "x": 2312.5066697809493,
+      "y": -659.4837951598636,
       "fields": [
         {
           "name": "id_defecto",
@@ -2147,8 +2147,9 @@
           "values": []
         },
         {
-          "name": "tipo_docment",
-          "type": "VARCHAR",
+          "id": "JBUYT3a3LHLuMpKaLpZ7E",
+          "name": "id_cuerpo_doctument",
+          "type": "INT",
           "default": "",
           "check": "",
           "primary": false,
@@ -2156,37 +2157,11 @@
           "notNull": false,
           "increment": false,
           "comment": "",
-          "id": 2,
-          "size": 255
-        },
-        {
-          "name": "num_docment",
-          "type": "NUMERIC",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 3
-        },
-        {
-          "name": "fecha_doct_envio",
-          "type": "DATE",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 4,
           "size": "",
           "values": []
         }
       ],
-      "comment": "",
+      "comment": "revizar si esta en 3ra forma normal",
       "indices": [],
       "color": "#175e7a",
       "key": 1746843483071
@@ -2306,8 +2281,9 @@
           "values": []
         },
         {
-          "name": "estado",
-          "type": "VARCHAR",
+          "id": "APiyD1cnRMoosyYrLUPFk",
+          "name": "id_descripcion_seguimiento",
+          "type": "INT",
           "default": "",
           "check": "",
           "primary": false,
@@ -2315,38 +2291,11 @@
           "notNull": false,
           "increment": false,
           "comment": "",
-          "id": 2,
-          "size": 255
-        },
-        {
-          "name": "ubicacion",
-          "type": "VARCHAR",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 3,
-          "size": 255
-        },
-        {
-          "name": "fecha_seguimiento",
-          "type": "DATE",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 4,
           "size": "",
           "values": []
         }
       ],
-      "comment": "",
+      "comment": "revizar si esta en 3ra forma normal",
       "indices": [],
       "color": "#175e7a",
       "key": 1746843513272
@@ -2512,87 +2461,6 @@
       "key": 1746843419470
     },
     {
-      "id": 36,
-      "name": "Pedidos_Clientes",
-      "x": 4000.806608270451,
-      "y": -576.756251040249,
-      "fields": [
-        {
-          "name": "id_pedido",
-          "type": "INT",
-          "default": "",
-          "check": "",
-          "primary": true,
-          "unique": true,
-          "notNull": true,
-          "increment": true,
-          "comment": "",
-          "id": 0,
-          "size": "",
-          "values": []
-        },
-        {
-          "name": "id_cliente",
-          "type": "INT",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 1,
-          "size": "",
-          "values": []
-        },
-        {
-          "name": "fecha_pedido",
-          "type": "DATE",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 2,
-          "size": "",
-          "values": []
-        },
-        {
-          "name": "feche_recibo",
-          "type": "DATE",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 3,
-          "size": "",
-          "values": []
-        },
-        {
-          "name": "estado_pedido",
-          "type": "VARCHAR",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 4,
-          "size": 255
-        }
-      ],
-      "comment": "",
-      "indices": [],
-      "color": "#175e7a",
-      "key": 1746842937142
-    },
-    {
       "id": 37,
       "name": "Clientes",
       "x": 4377.881389574055,
@@ -2617,6 +2485,285 @@
       "indices": [],
       "color": "#175e7a",
       "key": 1746843732751
+    },
+    {
+      "id": "udyxuFn_wq0VKjttC6T5s",
+      "name": "UBICACION",
+      "x": 2778.1370510434426,
+      "y": -512.3131920333262,
+      "fields": [
+        {
+          "name": "id_ubicacion",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "G1V6QQ4aHXu57w_LiHtO4"
+        },
+        {
+          "id": "6RJ3l1xviJ11NWc1gYgek",
+          "name": "locate",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": 255
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a"
+    },
+    {
+      "id": "DymA3Wz_NB84At0BubVeY",
+      "name": "R_Tiempo",
+      "x": 3389.1708733574915,
+      "y": -1371.6911702001614,
+      "fields": [
+        {
+          "name": "id_R_Tiempo",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "lvJICc8etbdK8odn37uc2"
+        },
+        {
+          "id": "3TWh5X_QnnmgY1MJICvoe",
+          "name": "Tipo_Tiempo",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "mpKGieBkXvfKQsgkNOvZd",
+          "name": "Hora",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "ObywmHWqhSgAMj5V6gapl",
+          "name": "Minuto",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a"
+    },
+    {
+      "id": "HeB2_80IKSSxINrXphBbK",
+      "name": "Tipo_incidencia",
+      "x": 3376.664333134689,
+      "y": -1092.9739880919988,
+      "fields": [
+        {
+          "name": "id_tipo_incedencia",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "7va57-nTV0qQQ6NR2PB9V"
+        },
+        {
+          "id": "sBWAgsKrlPSLHHd5Ll5ai",
+          "name": "Tiempo",
+          "type": "TIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "FBgqmim--W7_hBbf9woHW",
+          "name": "Descripcion",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": 255
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a"
+    },
+    {
+      "id": "saVt9l53TEkQXxuBI0xCb",
+      "name": "descripcion_seguimiento",
+      "x": 3628.58178619399,
+      "y": 216.63943809571487,
+      "fields": [
+        {
+          "name": "id_descripcion_segimiento",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "Xi9rINhFbNU5AQVsdS7v5"
+        },
+        {
+          "id": "ByYTQLqxh75ZgHh26EEYE",
+          "name": "estado",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "mawX-tthxaSHW_pQyn7tS",
+          "name": "ubicacion",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": 255
+        },
+        {
+          "id": "IpqZ2t_ZCb4fkZzXOlCgP",
+          "name": "fecha",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a"
+    },
+    {
+      "id": "fpCPq0Zjyf1mpkO-UizYs",
+      "name": "Cuerpo_Document",
+      "x": 2997.8948292441087,
+      "y": -26.344771947298923,
+      "fields": [
+        {
+          "name": "id_cuerpo_document",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "LkiojGvIMjcjATiAaz0d4"
+        },
+        {
+          "id": "y4O6wp_OAZNRGbVkUuebz",
+          "name": "numero_document",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "257NrINbMh9zK8YAk7bA4",
+          "name": "tipo_document",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": 255
+        },
+        {
+          "id": "HEtB705FUjemk8U3geZ9m",
+          "name": "fecha_doct_envio",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a"
     }
   ],
   "relationships": [
@@ -2808,17 +2955,6 @@
       "id": 16
     },
     {
-      "startTableId": 25,
-      "startFieldId": 3,
-      "endTableId": 11,
-      "endFieldId": 0,
-      "cardinality": "one_to_one",
-      "updateConstraint": "No action",
-      "deleteConstraint": "No action",
-      "name": "fk_Especificacion_Calidad_id_valoracion_Valoracion_inventario",
-      "id": 17
-    },
-    {
       "startTableId": 4,
       "startFieldId": 3,
       "endTableId": 25,
@@ -2827,7 +2963,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Recepcion_de_material_id_especificacion_Especificacion_Calidad",
-      "id": 18
+      "id": 17
     },
     {
       "startTableId": 26,
@@ -2838,7 +2974,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Control_Proceso_id_registro_tiempo_REGISTRO_TIEMPO",
-      "id": 19
+      "id": 18
     },
     {
       "startTableId": 26,
@@ -2849,7 +2985,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Control_Proceso_id_incidencia_REGISTRO_INCIDENCIA",
-      "id": 20
+      "id": 19
     },
     {
       "startTableId": 26,
@@ -2860,7 +2996,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Control_Proceso_id_control_PROGRESO_FABRICACION",
-      "id": 21
+      "id": 20
     },
     {
       "startTableId": 27,
@@ -2871,7 +3007,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Inspeccion_final_id_inspeccion_PRODUCTO_TERMINADO",
-      "id": 22
+      "id": 21
     },
     {
       "startTableId": 27,
@@ -2882,7 +3018,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Inspeccion_final_id_especificacion_Especificacion_Calidad",
-      "id": 23
+      "id": 22
     },
     {
       "startTableId": 27,
@@ -2893,7 +3029,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Inspeccion_final_id_defectuoso_Producto_defectuosos",
-      "id": 24
+      "id": 23
     },
     {
       "startTableId": 29,
@@ -2904,7 +3040,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Trazabilidad_id_defecto_Producto_defectuosos",
-      "id": 25
+      "id": 24
     },
     {
       "startTableId": 13,
@@ -2915,7 +3051,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_MATERIAL_USADO_id_trazabilidad_Trazabilidad",
-      "id": 26
+      "id": 25
     },
     {
       "startTableId": 30,
@@ -2926,7 +3062,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Distribucion_producto_id_almacen_ALMACEN",
-      "id": 27
+      "id": 26
     },
     {
       "startTableId": 30,
@@ -2937,7 +3073,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Distribucion_producto_id_doc_envio_Docment_envio",
-      "id": 28
+      "id": 27
     },
     {
       "startTableId": 36,
@@ -2948,7 +3084,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Pedidos_Clientes_id_cliente_Clientes",
-      "id": 29
+      "id": 28
     },
     {
       "startTableId": 34,
@@ -2959,7 +3095,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Gestion_Envios_id_pedido_Pedidos_Clientes",
-      "id": 30
+      "id": 29
     },
     {
       "startTableId": 35,
@@ -2970,7 +3106,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Preparacion_Pedidos_id_pedido_Pedidos_Clientes",
-      "id": 31
+      "id": 30
     },
     {
       "startTableId": 32,
@@ -2981,7 +3117,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Planificacion_Envios_id_envio_Pedidos_Clientes",
-      "id": 32
+      "id": 31
     },
     {
       "startTableId": 31,
@@ -2992,7 +3128,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Docment_envio_id_envio_Planificacion_Envios",
-      "id": 33
+      "id": 32
     },
     {
       "startTableId": 33,
@@ -3003,7 +3139,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Seguimiento_Entregas_id_envio_Planificacion_Envios",
-      "id": 34
+      "id": 33
     },
     {
       "startTableId": 3,
@@ -3014,7 +3150,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Ordene_de_compra_codigo_provedor_Provedor",
-      "id": 35
+      "id": 34
     },
     {
       "startTableId": 3,
@@ -3025,7 +3161,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Ordene_de_compra_id_lista_Lista_materiales",
-      "id": 36
+      "id": 35
     },
     {
       "startTableId": 19,
@@ -3036,7 +3172,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Lista_materiales_id_componente_Material",
-      "id": 37
+      "id": 36
     },
     {
       "startTableId": 19,
@@ -3047,7 +3183,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Lista_materiales_id_producto_PRODUCTO_TERMINADO",
-      "id": 38
+      "id": 37
     },
     {
       "startTableId": 9,
@@ -3058,7 +3194,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_INVP_TERMINADO_id_producto_PRODUCTO_TERMINADO",
-      "id": 39
+      "id": 38
     },
     {
       "startTableId": 13,
@@ -3069,7 +3205,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_MATERIAL_USADO_codigo_material_Material",
-      "id": 40
+      "id": 39
     },
     {
       "startTableId": 14,
@@ -3080,7 +3216,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_PROGRESO_FABRICACION_id_orden_ORDEN_FARBICACION",
-      "id": 41
+      "id": 40
     },
     {
       "startTableId": 13,
@@ -3091,7 +3227,73 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_MATERIAL_USADO_id_orden_ORDEN_FARBICACION",
+      "id": 41
+    },
+    {
+      "startTableId": 11,
+      "startFieldId": "7KJBPuge03Hird9csK9g5",
+      "endTableId": 25,
+      "endFieldId": 0,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_Valoracion_inventario_id_espesificacion_Especificacion_Calidad",
       "id": 42
+    },
+    {
+      "startTableId": 6,
+      "startFieldId": 2,
+      "endTableId": "udyxuFn_wq0VKjttC6T5s",
+      "endFieldId": "G1V6QQ4aHXu57w_LiHtO4",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_ALMACEN_id_ubicacion_UBICACION",
+      "id": 43
+    },
+    {
+      "startTableId": 15,
+      "startFieldId": "4Fc-5CQg6LE_EFFL0--NV",
+      "endTableId": "DymA3Wz_NB84At0BubVeY",
+      "endFieldId": "lvJICc8etbdK8odn37uc2",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_REGISTRO_TIEMPO_id_R_Tiempo_R_Tiempo",
+      "id": 44
+    },
+    {
+      "startTableId": 16,
+      "startFieldId": 1,
+      "endTableId": "HeB2_80IKSSxINrXphBbK",
+      "endFieldId": "7va57-nTV0qQQ6NR2PB9V",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_REGISTRO_INCIDENCIA_id_tipo_incidencia_Tipo_incidencia",
+      "id": 45
+    },
+    {
+      "startTableId": 33,
+      "startFieldId": "APiyD1cnRMoosyYrLUPFk",
+      "endTableId": "saVt9l53TEkQXxuBI0xCb",
+      "endFieldId": "Xi9rINhFbNU5AQVsdS7v5",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_Seguimiento_Entregas_id_descripcion_seguimiento_descripcion_seguimiento",
+      "id": 46
+    },
+    {
+      "startTableId": 31,
+      "startFieldId": "JBUYT3a3LHLuMpKaLpZ7E",
+      "endTableId": "fpCPq0Zjyf1mpkO-UizYs",
+      "endFieldId": "LkiojGvIMjcjATiAaz0d4",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_Docment_envio_id_cuerpo_doctument_Cuerpo_Document",
+      "id": 47
     }
   ],
   "notes": [],

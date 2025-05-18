@@ -1,3 +1,17 @@
+/* Revizar si esta en 3ra forma normal */
+CREATE TABLE IF NOT EXISTS "Pedidos_Clientes" (
+	"id_pedido" INTEGER NOT NULL UNIQUE,
+	"id_cliente" INTEGER,
+	"fecha_pedido" TEXT,
+	"feche_recibo" TEXT,
+	"estado_pedido" TEXT,
+	PRIMARY KEY("id_pedido"),
+	FOREIGN KEY ("id_cliente") REFERENCES "Clientes"("id_cliente")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE INDEX IF NOT EXISTS "Pedidos_Clientes_index_0"
+ON "Pedidos_Clientes" ();
 CREATE TABLE IF NOT EXISTS "Registro_provedor" (
 	"id_registro" INTEGER,
 	"codigo_Provedor" TEXT UNIQUE,
@@ -67,22 +81,24 @@ CREATE TABLE IF NOT EXISTS "Material" (
 );
 
 CREATE TABLE IF NOT EXISTS "ALMACEN" (
-	"id_inventario" INTEGER,
+	"id_ubicacion" INTEGER,
 	"id_almacen" INTEGER NOT NULL UNIQUE,
-	"locate" TEXT,
-	"name_producto" TEXT,
+	"id_inventario" INTEGER,
 	"id_valoracion" INTEGER,
 	PRIMARY KEY("id_almacen"),
 	FOREIGN KEY ("id_inventario") REFERENCES "MV_INVENTARIO"("Id_inventario")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("id_ubicacion") REFERENCES "UBICACION"("id_ubicacion")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
+/* revisar si esta en 3ra forma normal */
 CREATE TABLE IF NOT EXISTS "STOCK_MATERIAL" (
 	"id_stock" INTEGER,
-	"Id_almacen" INTEGER,
 	"C_reserva" TEXT,
 	"C_disponible" TEXT,
 	"En_circulacion" INTEGER,
+	"Id_almacen" INTEGER,
 	"codigo_material" TEXT,
 	PRIMARY KEY("id_stock"),
 	FOREIGN KEY ("Id_almacen") REFERENCES "ALMACEN"("id_almacen")
@@ -123,11 +139,14 @@ CREATE TABLE IF NOT EXISTS "MV_INVENTARIO" (
 	PRIMARY KEY("Id_inventario")
 );
 
+/* Revisar si esta en 3ra forma normal */
 CREATE TABLE IF NOT EXISTS "Valoracion_inventario" (
 	"Id_valoracion" INTEGER NOT NULL UNIQUE,
-	"codigo_material" TEXT,
+	"id_espesificacion" INTEGER,
 	"Fecha_aplicada" TEXT,
-	PRIMARY KEY("Id_valoracion")
+	PRIMARY KEY("Id_valoracion"),
+	FOREIGN KEY ("id_espesificacion") REFERENCES "Especificacion_Calidad"("id_espesificacion")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS "ORDEN_FARBICACION" (
@@ -138,13 +157,13 @@ CREATE TABLE IF NOT EXISTS "ORDEN_FARBICACION" (
 	PRIMARY KEY("Id_orden")
 );
 
+/* Revisar si esta en 3ra forma normal */
 CREATE TABLE IF NOT EXISTS "MATERIAL_USADO" (
-	"id_usado" INTEGER,
 	"id_orden" INTEGER,
-	"codigo_material" INTEGER,
 	"Cantidad_Usada" INTEGER,
+	"codigo_material" INTEGER,
 	"id_trazabilidad" INTEGER,
-	PRIMARY KEY("id_usado"),
+	PRIMARY KEY("id_orden"),
 	FOREIGN KEY ("id_trazabilidad") REFERENCES "Trazabilidad"("id_trazabilidad")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("codigo_material") REFERENCES "Material"("codigo_material")
@@ -164,20 +183,21 @@ CREATE TABLE IF NOT EXISTS "PROGRESO_FABRICACION" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
+/* revizar si esta en 3ra forma normal */
 CREATE TABLE IF NOT EXISTS "REGISTRO_TIEMPO" (
 	"Id_registro_tiempo" INTEGER,
-	"Tipo_Tiempo" TEXT UNIQUE,
-	"Tiempo_Minutos" TEXT,
-	"Tiempo_Hora" TEXT,
-	PRIMARY KEY("Id_registro_tiempo")
+	"id_R_Tiempo" INTEGER,
+	PRIMARY KEY("Id_registro_tiempo"),
+	FOREIGN KEY ("id_R_Tiempo") REFERENCES "R_Tiempo"("id_R_Tiempo")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS "REGISTRO_INCIDENCIA" (
 	"Id_Incidencia" INTEGER,
-	"Tipo_incidencia" TEXT,
-	"Descripcion " TEXT,
-	"Tiempo_incidencia" TEXT,
-	PRIMARY KEY("Id_Incidencia")
+	"id_tipo_incidencia" INTEGER,
+	PRIMARY KEY("Id_Incidencia"),
+	FOREIGN KEY ("id_tipo_incidencia") REFERENCES "Tipo_incidencia"("id_tipo_incedencia")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS "Orden_Produccion" (
@@ -279,10 +299,7 @@ CREATE TABLE IF NOT EXISTS "Especificacion_Calidad" (
 	"id_espesificacion" INTEGER NOT NULL UNIQUE,
 	"parametros" TEXT,
 	"descripccion_de_calidad" TEXT,
-	"id_valoracion" INTEGER,
-	PRIMARY KEY("id_espesificacion"),
-	FOREIGN KEY ("id_valoracion") REFERENCES "Valoracion_inventario"("Id_valoracion")
-	ON UPDATE NO ACTION ON DELETE NO ACTION
+	PRIMARY KEY("id_espesificacion")
 );
 
 CREATE TABLE IF NOT EXISTS "Control_Proceso" (
@@ -338,14 +355,15 @@ CREATE TABLE IF NOT EXISTS "Distribucion_producto" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
+/* revizar si esta en 3ra forma normal */
 CREATE TABLE IF NOT EXISTS "Docment_envio" (
 	"id_docment" INTEGER NOT NULL UNIQUE,
 	"id_envio" INTEGER,
-	"tipo_docment" TEXT,
-	"num_docment" REAL,
-	"fecha_doct_envio" TEXT,
+	"id_cuerpo_doctument" INTEGER,
 	PRIMARY KEY("id_docment"),
 	FOREIGN KEY ("id_envio") REFERENCES "Planificacion_Envios"("id_envio")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("id_cuerpo_doctument") REFERENCES "Cuerpo_Document"("id_cuerpo_document")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -360,14 +378,15 @@ CREATE TABLE IF NOT EXISTS "Planificacion_Envios" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
+/* revizar si esta en 3ra forma normal */
 CREATE TABLE IF NOT EXISTS "Seguimiento_Entregas" (
 	"id_seguimiento" INTEGER NOT NULL UNIQUE,
 	"id_envio" INTEGER,
-	"estado" TEXT,
-	"ubicacion" TEXT,
-	"fecha_seguimiento" TEXT,
+	"id_descripcion_seguimiento" INTEGER,
 	PRIMARY KEY("id_seguimiento"),
 	FOREIGN KEY ("id_envio") REFERENCES "Planificacion_Envios"("id_envio")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("id_descripcion_seguimiento") REFERENCES "descripcion_seguimiento"("id_descripcion_segimiento")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -393,18 +412,44 @@ CREATE TABLE IF NOT EXISTS "Preparacion_Pedidos" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-CREATE TABLE IF NOT EXISTS "Pedidos_Clientes" (
-	"id_pedido" INTEGER NOT NULL UNIQUE,
-	"id_cliente" INTEGER,
-	"fecha_pedido" TEXT,
-	"feche_recibo" TEXT,
-	"estado_pedido" TEXT,
-	PRIMARY KEY("id_pedido"),
-	FOREIGN KEY ("id_cliente") REFERENCES "Clientes"("id_cliente")
-	ON UPDATE NO ACTION ON DELETE NO ACTION
-);
-
 CREATE TABLE IF NOT EXISTS "Clientes" (
 	"id_cliente" INTEGER NOT NULL UNIQUE,
 	PRIMARY KEY("id_cliente")
+);
+
+CREATE TABLE IF NOT EXISTS "UBICACION" (
+	"id_ubicacion" INTEGER NOT NULL UNIQUE,
+	"locate" TEXT,
+	PRIMARY KEY("id_ubicacion")
+);
+
+CREATE TABLE IF NOT EXISTS "R_Tiempo" (
+	"id_R_Tiempo" INTEGER NOT NULL UNIQUE,
+	"Tipo_Tiempo" INTEGER,
+	"Hora" INTEGER,
+	"Minuto" INTEGER,
+	PRIMARY KEY("id_R_Tiempo")
+);
+
+CREATE TABLE IF NOT EXISTS "Tipo_incidencia" (
+	"id_tipo_incedencia" INTEGER NOT NULL UNIQUE,
+	"Tiempo" TEXT,
+	"Descripcion" TEXT,
+	PRIMARY KEY("id_tipo_incedencia")
+);
+
+CREATE TABLE IF NOT EXISTS "descripcion_seguimiento" (
+	"id_descripcion_segimiento" INTEGER NOT NULL UNIQUE,
+	"estado" INTEGER,
+	"ubicacion" TEXT,
+	"fecha" TEXT,
+	PRIMARY KEY("id_descripcion_segimiento")
+);
+
+CREATE TABLE IF NOT EXISTS "Cuerpo_Document" (
+	"id_cuerpo_document" INTEGER NOT NULL UNIQUE,
+	"numero_document" INTEGER,
+	"tipo_document" TEXT,
+	"fecha_doct_envio" TEXT,
+	PRIMARY KEY("id_cuerpo_document")
 );
