@@ -86,20 +86,6 @@
           "size": 255
         },
         {
-          "name": "id_orden_compra",
-          "type": "INT",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": true,
-          "increment": false,
-          "comment": "",
-          "id": 1,
-          "size": "",
-          "values": []
-        },
-        {
           "name": "nombre",
           "type": "VARCHAR",
           "default": "",
@@ -371,8 +357,8 @@
     {
       "id": 5,
       "name": "Material",
-      "x": 1035.679729268296,
-      "y": -623.3206478995718,
+      "x": 1153.5985370832877,
+      "y": -616.1740534865419,
       "fields": [
         {
           "name": "codigo_material",
@@ -639,20 +625,6 @@
           "values": []
         },
         {
-          "name": "id_inv_terminado",
-          "type": "INT",
-          "comment": "",
-          "unique": false,
-          "increment": false,
-          "notNull": false,
-          "primary": false,
-          "default": "",
-          "size": "",
-          "check": "",
-          "id": 1,
-          "values": []
-        },
-        {
           "name": "Name_producto",
           "type": "VARCHAR",
           "comment": "",
@@ -748,6 +720,20 @@
           "values": []
         },
         {
+          "id": "5DMEUamPAgaUcnMFnTj_g",
+          "name": "id_producto",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
           "name": "Id_almacen",
           "type": "INT",
           "comment": "",
@@ -792,8 +778,8 @@
       ],
       "indices": [],
       "id": 9,
-      "x": 1561.6101353336423,
-      "y": -624.3172315880947
+      "x": 1516.943920252206,
+      "y": -626.1038801913522
     },
     {
       "name": "MV_INVENTARIO",
@@ -951,34 +937,6 @@
           "default": "",
           "check": "",
           "id": 3
-        },
-        {
-          "name": "id_material",
-          "type": "INT",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 4,
-          "size": "",
-          "values": []
-        },
-        {
-          "name": "id_proceso",
-          "type": "INT",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": false,
-          "increment": false,
-          "comment": "",
-          "id": 5,
-          "size": "",
-          "values": []
         }
       ],
       "indices": [],
@@ -992,13 +950,41 @@
       "color": "#175e7a",
       "fields": [
         {
-          "name": "Id_material",
+          "id": "kb_dtUERrhsX78hS5R-VO",
+          "name": "id_usado",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "Q-E4YLUKzSgPaVR_hIGV0",
+          "name": "id_orden",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "codigo_material",
           "type": "INT",
           "comment": "",
           "unique": false,
           "increment": false,
           "notNull": false,
-          "primary": true,
+          "primary": false,
           "default": "",
           "check": "",
           "id": 0,
@@ -1036,8 +1022,8 @@
       ],
       "indices": [],
       "id": 13,
-      "x": 2088.6839211279153,
-      "y": -889.2888012248834
+      "x": 2052.950949062766,
+      "y": -1016.1408520561625
     },
     {
       "name": "PROGRESO_FABRICACION",
@@ -1098,12 +1084,26 @@
           "id": 3,
           "size": "",
           "values": []
+        },
+        {
+          "id": "2ayXt0WaixXsn_E_7uOn3",
+          "name": "id_orden",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
         }
       ],
       "indices": [],
       "id": 14,
-      "x": 1979.6096603127512,
-      "y": -1203.0225999698462
+      "x": 2345.8726239805283,
+      "y": -1278.0618413066593
     },
     {
       "name": "REGISTRO_TIEMPO",
@@ -1165,8 +1165,8 @@
       ],
       "indices": [],
       "id": 15,
-      "x": 2730.398625138415,
-      "y": -1445.2997545578105
+      "x": 2948.3697547358242,
+      "y": -1425.6466199219785
     },
     {
       "name": "REGISTRO_INCIDENCIA",
@@ -1228,8 +1228,8 @@
       ],
       "indices": [],
       "id": 16,
-      "x": 2756.791668146023,
-      "y": -1057.2670709961303
+      "x": 2987.269337966234,
+      "y": -1089.4267458547642
     },
     {
       "id": 17,
@@ -1422,8 +1422,8 @@
     {
       "id": 19,
       "name": "Lista_materiales",
-      "x": 801.2951116849135,
-      "y": -918.7497284953905,
+      "x": 826.3081921305178,
+      "y": -931.2562687181927,
       "fields": [
         {
           "name": "id_lista",
@@ -1858,8 +1858,8 @@
     {
       "id": 26,
       "name": "Control_Proceso",
-      "x": 2415.5036183395127,
-      "y": -1254.03428207268,
+      "x": 2642.4079909532093,
+      "y": -1271.9007681052544,
       "fields": [
         {
           "name": "id_control",
@@ -2775,39 +2775,6 @@
       "id": 13
     },
     {
-      "startTableId": 12,
-      "startFieldId": 4,
-      "endTableId": 13,
-      "endFieldId": 0,
-      "cardinality": "one_to_one",
-      "updateConstraint": "No action",
-      "deleteConstraint": "No action",
-      "name": "fk_ORDEN_FARBICACION_id_material_MATERIAL_USADO",
-      "id": 14
-    },
-    {
-      "startTableId": 14,
-      "startFieldId": 0,
-      "endTableId": 12,
-      "endFieldId": 5,
-      "cardinality": "one_to_one",
-      "updateConstraint": "No action",
-      "deleteConstraint": "No action",
-      "name": "fk_PROGRESO_FABRICACION_id_proceso_ORDEN_FARBICACION",
-      "id": 15
-    },
-    {
-      "startTableId": 8,
-      "startFieldId": 1,
-      "endTableId": 9,
-      "endFieldId": 0,
-      "cardinality": "one_to_one",
-      "updateConstraint": "No action",
-      "deleteConstraint": "No action",
-      "name": "fk_PRODUCTO_TERMINADO_id_inv_terminado_INVP_TERMINADO",
-      "id": 16
-    },
-    {
       "startTableId": 9,
       "startFieldId": 3,
       "endTableId": 10,
@@ -2816,7 +2783,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_INVP_TERMINADO_id_inventario_MV_INVENTARIO",
-      "id": 17
+      "id": 14
     },
     {
       "startTableId": 7,
@@ -2827,7 +2794,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_STOCK_MATERIAL_Id_almacen_ALMACEN",
-      "id": 18
+      "id": 15
     },
     {
       "startTableId": 7,
@@ -2838,7 +2805,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_STOCK_MATERIAL_codigo_material_Material",
-      "id": 19
+      "id": 16
     },
     {
       "startTableId": 25,
@@ -2849,7 +2816,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Especificacion_Calidad_id_valoracion_Valoracion_inventario",
-      "id": 20
+      "id": 17
     },
     {
       "startTableId": 4,
@@ -2860,7 +2827,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Recepcion_de_material_id_especificacion_Especificacion_Calidad",
-      "id": 21
+      "id": 18
     },
     {
       "startTableId": 26,
@@ -2871,7 +2838,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Control_Proceso_id_registro_tiempo_REGISTRO_TIEMPO",
-      "id": 22
+      "id": 19
     },
     {
       "startTableId": 26,
@@ -2882,7 +2849,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Control_Proceso_id_incidencia_REGISTRO_INCIDENCIA",
-      "id": 23
+      "id": 20
     },
     {
       "startTableId": 26,
@@ -2893,7 +2860,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Control_Proceso_id_control_PROGRESO_FABRICACION",
-      "id": 24
+      "id": 21
     },
     {
       "startTableId": 27,
@@ -2904,7 +2871,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Inspeccion_final_id_inspeccion_PRODUCTO_TERMINADO",
-      "id": 25
+      "id": 22
     },
     {
       "startTableId": 27,
@@ -2915,7 +2882,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Inspeccion_final_id_especificacion_Especificacion_Calidad",
-      "id": 26
+      "id": 23
     },
     {
       "startTableId": 27,
@@ -2926,7 +2893,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Inspeccion_final_id_defectuoso_Producto_defectuosos",
-      "id": 27
+      "id": 24
     },
     {
       "startTableId": 29,
@@ -2937,7 +2904,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Trazabilidad_id_defecto_Producto_defectuosos",
-      "id": 28
+      "id": 25
     },
     {
       "startTableId": 13,
@@ -2948,7 +2915,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_MATERIAL_USADO_id_trazabilidad_Trazabilidad",
-      "id": 29
+      "id": 26
     },
     {
       "startTableId": 30,
@@ -2959,7 +2926,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Distribucion_producto_id_almacen_ALMACEN",
-      "id": 30
+      "id": 27
     },
     {
       "startTableId": 30,
@@ -2970,7 +2937,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Distribucion_producto_id_doc_envio_Docment_envio",
-      "id": 31
+      "id": 28
     },
     {
       "startTableId": 36,
@@ -2981,7 +2948,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Pedidos_Clientes_id_cliente_Clientes",
-      "id": 32
+      "id": 29
     },
     {
       "startTableId": 34,
@@ -2992,7 +2959,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Gestion_Envios_id_pedido_Pedidos_Clientes",
-      "id": 33
+      "id": 30
     },
     {
       "startTableId": 35,
@@ -3003,7 +2970,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Preparacion_Pedidos_id_pedido_Pedidos_Clientes",
-      "id": 34
+      "id": 31
     },
     {
       "startTableId": 32,
@@ -3014,7 +2981,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Planificacion_Envios_id_envio_Pedidos_Clientes",
-      "id": 35
+      "id": 32
     },
     {
       "startTableId": 31,
@@ -3025,7 +2992,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Docment_envio_id_envio_Planificacion_Envios",
-      "id": 36
+      "id": 33
     },
     {
       "startTableId": 33,
@@ -3036,7 +3003,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Seguimiento_Entregas_id_envio_Planificacion_Envios",
-      "id": 37
+      "id": 34
     },
     {
       "startTableId": 3,
@@ -3047,7 +3014,7 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Ordene_de_compra_codigo_provedor_Provedor",
-      "id": 38
+      "id": 35
     },
     {
       "startTableId": 3,
@@ -3058,7 +3025,73 @@
       "updateConstraint": "No action",
       "deleteConstraint": "No action",
       "name": "fk_Ordene_de_compra_id_lista_Lista_materiales",
+      "id": 36
+    },
+    {
+      "startTableId": 19,
+      "startFieldId": 2,
+      "endTableId": 5,
+      "endFieldId": 0,
+      "cardinality": "one_to_many",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_Lista_materiales_id_componente_Material",
+      "id": 37
+    },
+    {
+      "startTableId": 19,
+      "startFieldId": 1,
+      "endTableId": 8,
+      "endFieldId": 0,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_Lista_materiales_id_producto_PRODUCTO_TERMINADO",
+      "id": 38
+    },
+    {
+      "startTableId": 9,
+      "startFieldId": "5DMEUamPAgaUcnMFnTj_g",
+      "endTableId": 8,
+      "endFieldId": 0,
+      "cardinality": "one_to_many",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_INVP_TERMINADO_id_producto_PRODUCTO_TERMINADO",
       "id": 39
+    },
+    {
+      "startTableId": 13,
+      "startFieldId": 0,
+      "endTableId": 5,
+      "endFieldId": 0,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_MATERIAL_USADO_codigo_material_Material",
+      "id": 40
+    },
+    {
+      "startTableId": 14,
+      "startFieldId": "2ayXt0WaixXsn_E_7uOn3",
+      "endTableId": 12,
+      "endFieldId": 0,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_PROGRESO_FABRICACION_id_orden_ORDEN_FARBICACION",
+      "id": 41
+    },
+    {
+      "startTableId": 13,
+      "startFieldId": "Q-E4YLUKzSgPaVR_hIGV0",
+      "endTableId": 12,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_MATERIAL_USADO_id_orden_ORDEN_FARBICACION",
+      "id": 42
     }
   ],
   "notes": [],

@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS "Registro_provedor" (
 
 CREATE TABLE IF NOT EXISTS "Provedor" (
 	"codigo_Provedor" TEXT NOT NULL UNIQUE,
-	"id_orden_compra" INTEGER NOT NULL,
 	"nombre" TEXT NOT NULL,
 	"telefono" TEXT NOT NULL,
 	"email" TEXT NOT NULL,
@@ -94,7 +93,6 @@ CREATE TABLE IF NOT EXISTS "STOCK_MATERIAL" (
 
 CREATE TABLE IF NOT EXISTS "PRODUCTO_TERMINADO" (
 	"Id_producto" INTEGER NOT NULL UNIQUE,
-	"id_inv_terminado" INTEGER,
 	"Name_producto" TEXT,
 	"Description" TEXT,
 	"C_terminada" INTEGER,
@@ -102,18 +100,19 @@ CREATE TABLE IF NOT EXISTS "PRODUCTO_TERMINADO" (
 	"id_inspeccion" INTEGER,
 	PRIMARY KEY("Id_producto"),
 	FOREIGN KEY ("Id_producto") REFERENCES "Rutas_Fabricacion"("id_producto")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("id_inv_terminado") REFERENCES "INVP_TERMINADO"("Id_inv_terminado")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS "INVP_TERMINADO" (
 	"Id_inv_terminado" INTEGER NOT NULL UNIQUE,
+	"id_producto" INTEGER,
 	"Id_almacen" INTEGER,
 	"Cantidad" INTEGER,
 	"id_inventario" INTEGER,
 	PRIMARY KEY("Id_inv_terminado"),
 	FOREIGN KEY ("id_inventario") REFERENCES "MV_INVENTARIO"("Id_inventario")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("id_producto") REFERENCES "PRODUCTO_TERMINADO"("Id_producto")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -136,19 +135,21 @@ CREATE TABLE IF NOT EXISTS "ORDEN_FARBICACION" (
 	"Fecha_Terminacion" TEXT,
 	"Prioridad_pedido" TEXT,
 	"Fecha__Inicio" TEXT,
-	"id_material" INTEGER,
-	"id_proceso" INTEGER,
-	PRIMARY KEY("Id_orden"),
-	FOREIGN KEY ("id_material") REFERENCES "MATERIAL_USADO"("Id_material")
-	ON UPDATE NO ACTION ON DELETE NO ACTION
+	PRIMARY KEY("Id_orden")
 );
 
 CREATE TABLE IF NOT EXISTS "MATERIAL_USADO" (
-	"Id_material" INTEGER,
+	"id_usado" INTEGER,
+	"id_orden" INTEGER,
+	"codigo_material" INTEGER,
 	"Cantidad_Usada" INTEGER,
 	"id_trazabilidad" INTEGER,
-	PRIMARY KEY("Id_material"),
+	PRIMARY KEY("id_usado"),
 	FOREIGN KEY ("id_trazabilidad") REFERENCES "Trazabilidad"("id_trazabilidad")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("codigo_material") REFERENCES "Material"("codigo_material")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("id_orden") REFERENCES "ORDEN_FARBICACION"("Id_orden")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -157,8 +158,9 @@ CREATE TABLE IF NOT EXISTS "PROGRESO_FABRICACION" (
 	"estado_etapa" TEXT,
 	"nombre_etapa" INTEGER,
 	"id_control" INTEGER,
+	"id_orden" INTEGER,
 	PRIMARY KEY("id_proceso"),
-	FOREIGN KEY ("id_proceso") REFERENCES "ORDEN_FARBICACION"("id_proceso")
+	FOREIGN KEY ("id_orden") REFERENCES "ORDEN_FARBICACION"("Id_orden")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -216,7 +218,11 @@ CREATE TABLE IF NOT EXISTS "Lista_materiales" (
 	-- FK Producto
 	"id_componente" INTEGER,
 	"cantidades" INTEGER NOT NULL,
-	PRIMARY KEY("id_lista")
+	PRIMARY KEY("id_lista"),
+	FOREIGN KEY ("id_componente") REFERENCES "Material"("codigo_material")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("id_producto") REFERENCES "PRODUCTO_TERMINADO"("Id_producto")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
 CREATE INDEX IF NOT EXISTS "Lista_materiales_index_0"
