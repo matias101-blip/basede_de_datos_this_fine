@@ -8,19 +8,14 @@ repositorio con sqls script de modelos de la materia Base de Datos, estos modelo
 - Entidades abstraidas del documento
 - Tablas listas
 - Primera forma normal
-### Revisar
-- Revisar relaciones
 - 2da forma normal
 - 3ra forma normal
-- validar 1ro forma normal
 ## Componecte practico
-Falta archivo sql (realizandose)
+[Archivo componente practico](./src/componete_practico.sql)
 ### Realizado
 - Generando modelos y tablas
-
-### Revisar
-- Unir los modelos
-- Relacionar
 - 1ra forma normal
 - 2da forma normal
 - 3ra forma normal
+
+# Todo esta terminado Uwu
